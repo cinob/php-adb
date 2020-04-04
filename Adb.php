@@ -2,10 +2,10 @@
 
 class Adb
 {
-	/**
-	 * HOME键
-	 * @var integer
-	 */
+    /**
+     * HOME键
+     * @var integer
+     */
     public static $HOME            = 3;
     /**
      * 返回键
@@ -93,64 +93,64 @@ class Adb
      */
     public static $MEDIA_PAUSE     = 127;
 
-	/**
-	 * 截屏
-	 * @author   cinob
-	 * @dateTime 2020-04-04
-	 * @param    string     $name 图片名称
-	 */
-	public static function getScreenShot(string $name = 'screen')
-	{
-		exec('adb shell screencap -p /sdcard/screen.png');
-		exec('adb pull /sdcard/screen.png ./'.$name.'.png');
-	}
+    /**
+     * 截屏
+     * @author   cinob
+     * @dateTime 2020-04-04
+     * @param    string     $name 图片名称
+     */
+    public static function getScreenShot(string $name = 'screen')
+    {
+        exec('adb shell screencap -p /sdcard/screen.png');
+        exec('adb pull /sdcard/screen.png ./'.$name.'.png');
+    }
 
-	/**
-	 * 点击屏幕
-	 * @author   cinob
-	 * @dateTime 2020-04-04
-	 * @param    int        $x x坐标
-	 * @param    int        $y y坐标
-	 */
-	public static function click(int $x, int $y)
-	{
-		exec("adb shell input tap $x $y");
-	}
+    /**
+     * 点击屏幕
+     * @author   cinob
+     * @dateTime 2020-04-04
+     * @param    int        $x x坐标
+     * @param    int        $y y坐标
+     */
+    public static function click(int $x, int $y)
+    {
+        exec("adb shell input tap $x $y");
+    }
 
-	/**
-	 * 滑动屏幕
-	 * @author   cinob
-	 * @dateTime 2020-04-04
-	 * @param    int         $x1   开始x坐标
-	 * @param    int         $y1   开始y坐标
-	 * @param    int         $x2   结束x坐标
-	 * @param    int         $y2   结束y坐标
-	 * @param    int|integer $time 滑动时间
-	 */
-	public static function slide(int $x1, int $y1, int $x2, int $y2, int $time = 100)
-	{
-		exec("adb shell input swipe $x1 $y1 $x2 $y2 $time");
-	}
+    /**
+     * 滑动屏幕
+     * @author   cinob
+     * @dateTime 2020-04-04
+     * @param    int         $x1   开始x坐标
+     * @param    int         $y1   开始y坐标
+     * @param    int         $x2   结束x坐标
+     * @param    int         $y2   结束y坐标
+     * @param    int|integer $time 滑动时间
+     */
+    public static function slide(int $x1, int $y1, int $x2, int $y2, int $time = 100)
+    {
+        exec("adb shell input swipe $x1 $y1 $x2 $y2 $time");
+    }
 
-	/**
-	 * 屏幕左滑动
-	 * @author   cinob
-	 * @dateTime 2020-04-04
-	 */
-	public static function leftSlide()
-	{
-		self::slide(900, 1000, 200, 1000);
-	}
+    /**
+     * 屏幕左滑动
+     * @author   cinob
+     * @dateTime 2020-04-04
+     */
+    public static function leftSlide()
+    {
+        self::slide(900, 1000, 200, 1000);
+    }
 
-	/**
-	 * 屏幕右滑动
-	 * @author   cinob
-	 * @dateTime 2020-04-04
-	 */
-	public static function rightSlide()
-	{
-		self::slide(200, 1000, 900, 1000);
-	}
+    /**
+     * 屏幕右滑动
+     * @author   cinob
+     * @dateTime 2020-04-04
+     */
+    public static function rightSlide()
+    {
+        self::slide(200, 1000, 900, 1000);
+    }
 
     /**
      * 事件
@@ -158,9 +158,9 @@ class Adb
      * @dateTime 2020-04-04
      * @param    int        $key
      */
-	public static function keyEvent(int $key)
-	{
-		exec('adb shell input keyevent '.$key);
-	}
+    public static function keyEvent(int $key)
+    {
+        exec('adb shell input keyevent '.$key);
+    }
 
 }
