@@ -11,7 +11,7 @@ function go(int $x, int $y)
     // 点击逛一逛按钮
     Adb::click($x, $y);
     // 模拟加载页面耗时 根据手机网速自行调整
-    sleep(1);
+    sleep(2);
     // 模拟浏览页面15s
     for ($i=0; $i<5; $i++) {
         Adb::slide(528, 1964,502, 862, 3000);
@@ -19,7 +19,7 @@ function go(int $x, int $y)
     }
     // 返回喵币中心页面
     Adb::keyEvent(Adb::$BACK);
-    sleep(1);
+    sleep(2);
 }
 
 // 完成15次
