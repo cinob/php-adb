@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>获取图片坐标</title>
+  <script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+  <style>
+    * {
+      padding:0;
+      margin:0;
+    }
+  </style>
+</head>
+<body>
+  <img src="./screen.png" alt="">
+</body>
+<script>
+  var fr = 0;
+  var to = 0;
+  $(function(){
+        $('img').click(function(e) {
+            e = e || window.event;
+            __xx = e.pageX || e.clientX + document.body.scroolLeft;
+            __yy = e.pageY || e.clientY + document.body.scrollTop;
+          console.log(fr = {'x':__xx,'y':__yy});
+        });
+    });
+</script>
+</html>

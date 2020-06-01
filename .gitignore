@@ -1,6 +1,10 @@
 !.gitignore
-!Adb.php
-!img.html
-!README.md
-！taobao618
-*
+/*.php
+*.exe
+*.dll
+/*.html
+*.txt
+*.png
+composer.lock
+composer.json
+baidujump/
